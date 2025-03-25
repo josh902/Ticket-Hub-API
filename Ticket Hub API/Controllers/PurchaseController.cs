@@ -50,5 +50,6 @@ namespace Ticket_Hub_API.Controllers
             // Return success response
             return Ok("Ticket purchase received and queued.");
         }
+
     }
 }

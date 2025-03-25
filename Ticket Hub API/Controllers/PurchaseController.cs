@@ -9,11 +9,11 @@ namespace Ticket_Hub_API.Controllers
     [Route("api/[controller]")]
     public class PurchaseController : ControllerBase
     {
-        private readonly IConfiguration _config;
+        private readonly IConfiguration _configuration;
 
-        public PurchaseController(IConfiguration config)
+        public PurchaseController(IConfiguration configuration)
         {
-            _config = config;
+            _configuration = configuration;
         }
 
         [HttpPost]
@@ -25,7 +25,12 @@ namespace Ticket_Hub_API.Controllers
             }
 
             string queueName = "tickethub";
-            string connectionString = _config["AzureStorage:ConnectionString"];
+            string? connectionString = _configuration["AzureStorageConnectionString"];
+
+            if (string.IsNullOrEmpty(connectionString))
+            {
+                return BadRequest("Connection string is missing.");
+            }
 
             var queueClient = new QueueClient(connectionString, queueName);
             await queueClient.CreateIfNotExistsAsync();

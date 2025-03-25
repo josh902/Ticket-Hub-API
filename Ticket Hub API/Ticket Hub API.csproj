@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Ticket_Hub_API</RootNamespace>
+    <UserSecretsId>088e3e4c-afd9-4ef1-b02a-2c5fd673d3fb</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

@@ -2,7 +2,7 @@
 using Ticket_Hub_API.Models;
 using Azure.Storage.Queues;
 using System.Text.Json;
-
+ 
 namespace Ticket_Hub_API.Controllers
 {
     [ApiController]
